@@ -1,0 +1,39 @@
+{
+  "name": "react-iamge-matching-game",
+  "author": "Nishant sabharwal",
+  "version": "1.0.0",
+  "description": "A image matching game with React.js",
+  "dependencies": {
+    "envify": "^3.0.0",
+    "flux": "^2.0.1",
+    "lodash": "^3.0.1",
+    "object-assign": "^2.0.0",
+    "react": "^0.12.2",
+    "reactify": "^0.15.2",
+    "stylus": "^0.49.3",
+    "uglify-js": "~2.4.15",
+    "watchify": "^2.1.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "browserify": "^6.2.0",
+    "envify": "^3.0.0",
+    "path-webpack": "0.0.3",
+    "reactify": "^0.15.2",
+    "uglify-js": "~2.4.15",
+    "watchify": "^2.1.1",
+    "webpack": "^1.13.3"
+  },
+  "main": "js/app.jsx",
+  "scripts": {
+    "scriptName": "webpack --config etc..."
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
+  }
+}
