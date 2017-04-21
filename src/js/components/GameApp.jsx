@@ -8,7 +8,7 @@ var Playagain = require('./Playagain.jsx');
 var Prizes = require('./Prizes.jsx');
 
 
- var GameApp = React.createClass({
+var GameApp = React.createClass({
 
     getInitialState: function () {
         return {
@@ -46,10 +46,11 @@ var Prizes = require('./Prizes.jsx');
         }.bind(this), 2500);
     },
     handler: function() {
-    this.setState({
-      playagain: false,
-    });
-  },
+        this.setState({
+            message: 'Click any tile',
+          playagain: false,
+      });
+    },
     render: function () {
         if (Object.keys(this.state.allTiles).length < 1) {
             return null;
@@ -80,7 +81,7 @@ var Prizes = require('./Prizes.jsx');
             );
     },
 
-     _onTileChange: function () {
+    _onTileChange: function () {
         this.setState({
             allTiles: TileStore.getAll(),
         });
