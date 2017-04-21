@@ -7,9 +7,7 @@ var TileActions = require('../actions/TileActions');
 var Playagain = require('./Playagain.jsx');
 var Prizes = require('./Prizes.jsx');
 
-/**
- * Retrieve the current TODO data from the TodoStore
- */
+
  var GameApp = React.createClass({
 
     getInitialState: function () {
@@ -53,8 +51,6 @@ var Prizes = require('./Prizes.jsx');
     });
   },
     render: function () {
-        // This section should be hidden by default
-        // and shown when there are tiles.
         if (Object.keys(this.state.allTiles).length < 1) {
             return null;
         }
@@ -84,9 +80,6 @@ var Prizes = require('./Prizes.jsx');
             );
     },
 
-    /**
-     * Event handler for 'change' events coming from the TileStore
-     */
      _onTileChange: function () {
         this.setState({
             allTiles: TileStore.getAll(),

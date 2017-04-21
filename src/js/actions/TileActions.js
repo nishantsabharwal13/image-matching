@@ -3,9 +3,6 @@ var TileConstants = require('../constants/TileConstants');
 
 var TileActions = {
 
-    /**
-     * @param  {string} text
-     */
     clickTile: function(id) {
         AppDispatcher.dispatch({
             actionType: TileConstants.TILE_CLICK,

@@ -39,9 +39,7 @@ function generateTiles() {
 }
 
 function clickTile(targetId) {
-    /**
-     * Flip the tile
-     */
+
      _tiles[targetId].flipped = true;
 
 
@@ -50,10 +48,6 @@ function clickTile(targetId) {
 
  function matchCheck() {
     var flipped = [];
-
-    /**
-     * Check if there is any matching tile
-     */
 
      for (var id in _tiles) {
 
@@ -87,10 +81,6 @@ function clickTile(targetId) {
 var TileStore = assign({}, EventEmitter.prototype, {
 
 
-    /**
-     * Get the entire collection of TODOs.
-     * @return {object}
-     */
      getAll: function () {
         return _tiles;
     },
@@ -113,22 +103,15 @@ var TileStore = assign({}, EventEmitter.prototype, {
         return firstFlipIndex;
     },
 
-    /**
-     * @param {function} callback
-     */
      addChangeListener: function (callback) {
         this.on(CHANGE_EVENT, callback);
     },
 
-    /**
-     * @param {function} callback
-     */
      removeChangeListener: function (callback) {
         this.removeListener(CHANGE_EVENT, callback);
     }
 });
 
-// Register callback to handle all updates
 TileStore.dispatchToken = AppDispatcher.register(function (action) {
 
     switch (action.actionType) {
@@ -143,15 +126,9 @@ TileStore.dispatchToken = AppDispatcher.register(function (action) {
 
         break;
         default:
-        // no op
     }
 });
 
 generateTiles();
-
-
-/**
- * When a tile is clicked
- */
 
  module.exports = TileStore;

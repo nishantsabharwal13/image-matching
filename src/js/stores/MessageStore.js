@@ -21,9 +21,6 @@ function updateMessage() {
     var tiles = TileStore.getAll();
     var allMatched = true;
 
-    /**
-     * Check if there is any matching tile
-     */
     for (var id in tiles) {
 
         if (tiles[id].matched === false) allMatched = false;
@@ -62,22 +59,16 @@ var MessageStore = assign({}, EventEmitter.prototype, {
         this.emit(CHANGE_EVENT);
     },
 
-    /**
-     * @param {function} callback
-     */
+
     addChangeListener: function (callback) {
         this.on(CHANGE_EVENT, callback);
     },
 
-    /**
-     * @param {function} callback
-     */
     removeChangeListener: function (callback) {
         this.removeListener(CHANGE_EVENT, callback);
     }
 });
 
-// Register callback to handle all updates
 MessageStore.dispatchToken = AppDispatcher.register(function (action) {
 
     switch (action.actionType) {
@@ -89,12 +80,10 @@ MessageStore.dispatchToken = AppDispatcher.register(function (action) {
 
         case TileConstants.MATCH_CHECK:
             AppDispatcher.waitFor([TileStore.dispatchToken]);
-            // updateMessage();
             MessageStore.emitChange();
             break;
 
         default:
-        // no op
     }
 });
 
