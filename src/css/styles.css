@@ -13,6 +13,7 @@ body {
 }
 .welcomeNote{
 color: #ffffff;
+padding-top:1rem;
 text-align: center;
 }
 .instructions{
@@ -37,7 +38,8 @@ text-align: center;
 }
 #game {
   margin: 30px auto 0;
-  width: 660px;
+  width: 721px;
+  background: rgba(0, 0, 0, 0.25);
 }
 #game .retry {
   margin-top: 20px;
@@ -54,6 +56,7 @@ text-align: center;
   float: left;
   margin-right: 15px;
   margin-bottom: 15px;
+  margin-left:15px;
   font-size: 150px;
 }
 #game .flip-container,
@@ -112,19 +115,18 @@ text-align: center;
     bottom: 0;
     left: 0;
     right: 0;
-       background: rgba(103, 61, 61, 0.85);
+       background: rgba(51, 51, 51, 0.74);
     z-index: 9;
 }
 .playAgain {
-      width: 510px;
     position: absolute;
     margin: 0 auto;
     text-align: center;
     z-index: 10;
-    background: #cf1a5d;
+    background: rgb(196, 42, 91);
     left: auto;
     right: auto;
-        width: 510px;
+        width: 585px;
     padding: 68px;
     color: white;
     border-radius: 5px;
@@ -153,10 +155,9 @@ text-align: center;
     padding: 2rem 0;
     display: table;
     width: 100%;
-    background: #FFF3FA;
+    background: #f4e6e6;
     border-radius: 4px;
     box-sizing: border-box;
-    margin-left: -6px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.52);
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
@@ -180,4 +181,7 @@ text-align: center;
     content: 'sd';
     color: transparent;
     zoom: 1.4;
+}
+.icons:nth-child(1), .icons:nth-child(2) {
+    border-right: 1px solid #ccc;
 }

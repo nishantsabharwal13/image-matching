@@ -19075,12 +19075,12 @@
 	            React.createElement(
 	                'p',
 	                { className: 'instructions' },
-	                'To start playing, click on any two tile to reveal a movies name behind it. Purely luck based.'
+	                'To start playing, click on any two tile to reveal a movies name behind it.'
 	            ),
 	            React.createElement(
 	                'p',
 	                { className: 'instructions' },
-	                'If the tiles match with the movie name, you win attractive prizes.If they dont match, try again.'
+	                'If the tiles match with the movie name, you win attractive prizes listed below.'
 	            ),
 	            React.createElement(Status, { message: this.state.message }),
 	            tiles,
