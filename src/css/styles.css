@@ -161,14 +161,14 @@ text-align: center;
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
 .icons:nth-child(1):before {
-    background: url(../images/mobile.png);
+    background: url(../images/movietickets.png);
     background-size: contain;
     content: 'sd';
     color: transparent;
     zoom: 1.4;
 }
 .icons:nth-child(2):before {
-    background: url(../images/movietickets.png);
+    background: url(../images/mobile.png);
     background-size: contain;
     content: 'sd';
     color: transparent;
