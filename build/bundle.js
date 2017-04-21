@@ -19047,7 +19047,7 @@
 	    },
 	    handler: function handler() {
 	        this.setState({
-	            message: 'Click any tile',
+	            message: 'Click any tile!',
 	            playagain: false
 	        });
 	    },
