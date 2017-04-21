@@ -19007,9 +19007,6 @@
 	var Playagain = __webpack_require__(177);
 	var Prizes = __webpack_require__(178);
 
-	/**
-	 * Retrieve the current TODO data from the TodoStore
-	 */
 	var GameApp = React.createClass({
 	    displayName: 'GameApp',
 
@@ -19054,8 +19051,6 @@
 	        });
 	    },
 	    render: function render() {
-	        // This section should be hidden by default
-	        // and shown when there are tiles.
 	        if (Object.keys(this.state.allTiles).length < 1) {
 	            return null;
 	        }
@@ -19093,9 +19088,6 @@
 	        );
 	    },
 
-	    /**
-	     * Event handler for 'change' events coming from the TileStore
-	     */
 	    _onTileChange: function _onTileChange() {
 	        this.setState({
 	            allTiles: TileStore.getAll()
@@ -19160,18 +19152,12 @@
 	}
 
 	function clickTile(targetId) {
-	    /**
-	     * Flip the tile
-	     */
+
 	    _tiles[targetId].flipped = true;
 	}
 
 	function matchCheck() {
 	    var flipped = [];
-
-	    /**
-	     * Check if there is any matching tile
-	     */
 
 	    for (var id in _tiles) {
 
@@ -19202,10 +19188,6 @@
 	}
 	var TileStore = assign({}, EventEmitter.prototype, {
 
-	    /**
-	     * Get the entire collection of TODOs.
-	     * @return {object}
-	     */
 	    getAll: function getAll() {
 	        return _tiles;
 	    },
@@ -19227,22 +19209,15 @@
 	        return firstFlipIndex;
 	    },
 
-	    /**
-	     * @param {function} callback
-	     */
 	    addChangeListener: function addChangeListener(callback) {
 	        this.on(CHANGE_EVENT, callback);
 	    },
 
-	    /**
-	     * @param {function} callback
-	     */
 	    removeChangeListener: function removeChangeListener(callback) {
 	        this.removeListener(CHANGE_EVENT, callback);
 	    }
 	});
 
-	// Register callback to handle all updates
 	TileStore.dispatchToken = AppDispatcher.register(function (action) {
 
 	    switch (action.actionType) {
@@ -19257,15 +19232,10 @@
 
 	            break;
 	        default:
-	        // no op
 	    }
 	});
 
 	generateTiles();
-
-	/**
-	 * When a tile is clicked
-	 */
 
 	module.exports = TileStore;
 
@@ -19967,9 +19937,6 @@
 	    var tiles = TileStore.getAll();
 	    var allMatched = true;
 
-	    /**
-	     * Check if there is any matching tile
-	     */
 	    for (var id in tiles) {
 
 	        if (tiles[id].matched === false) allMatched = false;
@@ -20005,22 +19972,15 @@
 	        this.emit(CHANGE_EVENT);
 	    },
 
-	    /**
-	     * @param {function} callback
-	     */
 	    addChangeListener: function addChangeListener(callback) {
 	        this.on(CHANGE_EVENT, callback);
 	    },
 
-	    /**
-	     * @param {function} callback
-	     */
 	    removeChangeListener: function removeChangeListener(callback) {
 	        this.removeListener(CHANGE_EVENT, callback);
 	    }
 	});
 
-	// Register callback to handle all updates
 	MessageStore.dispatchToken = AppDispatcher.register(function (action) {
 
 	    switch (action.actionType) {
@@ -20032,12 +19992,10 @@
 
 	        case TileConstants.MATCH_CHECK:
 	            AppDispatcher.waitFor([TileStore.dispatchToken]);
-	            // updateMessage();
 	            MessageStore.emitChange();
 	            break;
 
 	        default:
-	        // no op
 	    }
 	});
 
@@ -21906,9 +21864,6 @@
 
 	var TileActions = {
 
-	    /**
-	     * @param  {string} text
-	     */
 	    clickTile: function clickTile(id) {
 	        AppDispatcher.dispatch({
 	            actionType: TileConstants.TILE_CLICK,
