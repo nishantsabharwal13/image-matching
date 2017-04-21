@@ -41,7 +41,8 @@ var Prizes = require('./Prizes.jsx');
             TileActions.matchCheck();
             this.setState({
                 allTiles: TileStore.getAll(),
-                isWaiting: false
+                isWaiting: false,
+                playagain:true
             });
 
         }.bind(this), 2500);
@@ -68,12 +69,12 @@ var Prizes = require('./Prizes.jsx');
 
         return (
             <section id="main">
-            <h2 className="welcomeNote"> Welcome to image matching game</h2>
+            <h2 className="welcomeNote"> Welcome to Movie Name Matching game</h2>
             <p className="instructions">
-            To start playing, click on any two tile to reveal the movie name behind it.
+            To start playing, click on any two tile to reveal a movies name behind it. Purely luck based.
             </p>
             <p className="instructions">
-            If the tiles match with the movie name, you win.If they dont match, try again. 
+            If the tiles match with the movie name, you win attractive prizes.If they dont match, try again. 
             </p>
             <Status message={this.state.message} />
             {tiles}

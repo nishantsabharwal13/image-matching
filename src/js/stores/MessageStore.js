@@ -89,7 +89,7 @@ MessageStore.dispatchToken = AppDispatcher.register(function (action) {
 
         case TileConstants.MATCH_CHECK:
             AppDispatcher.waitFor([TileStore.dispatchToken]);
-            updateMessage();
+            // updateMessage();
             MessageStore.emitChange();
             break;
 

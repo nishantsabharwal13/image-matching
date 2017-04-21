@@ -5,7 +5,7 @@ var Playagain = React.createClass({
     		<div>
             <div className="playAgain">
             <h2 className="">{this.props.message}</h2>
-            <button className="playButton" onClick={this.props.handler}> Play again</button>
+            <button className="playButton" onClick={this.props.handler}> Play </button>
             </div>
             <div className="overlay"/>
             </div>
