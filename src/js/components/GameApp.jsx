@@ -40,7 +40,6 @@ var Playagain = require('./Playagain.jsx');
             TileActions.matchCheck();
             this.setState({
                 allTiles: TileStore.getAll(),
-                playagain:true,
                 isWaiting: false
             });
 
@@ -77,7 +76,7 @@ var Playagain = require('./Playagain.jsx');
             </p>
             <Status message={this.state.message} />
             {tiles}
-              { this.state.playagain ? <Playagain handler = {this.handler} /> : null }
+              { this.state.playagain ? <Playagain message = {this.state.message} handler = {this.handler} /> : null }
             </section>
             );
     },
@@ -87,7 +86,8 @@ var Playagain = require('./Playagain.jsx');
      */
      _onTileChange: function () {
         this.setState({
-            allTiles: TileStore.getAll()
+            allTiles: TileStore.getAll(),
+            playagain:true,
         });
     },
 
