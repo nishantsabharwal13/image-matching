@@ -47,7 +47,6 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
-
 	var GameApp = __webpack_require__(148);
 
 	React.render(React.createElement(GameApp, null), document.getElementById('game'));
@@ -19006,6 +19005,7 @@
 	var Status = __webpack_require__(175);
 	var TileActions = __webpack_require__(176);
 	var Playagain = __webpack_require__(177);
+	var Prizes = __webpack_require__(178);
 
 	/**
 	 * Retrieve the current TODO data from the TodoStore
@@ -19043,7 +19043,6 @@
 	            TileActions.matchCheck();
 	            this.setState({
 	                allTiles: TileStore.getAll(),
-	                playagain: true,
 	                isWaiting: false
 	            });
 	        }.bind(this), 2500);
@@ -19088,7 +19087,8 @@
 	            ),
 	            React.createElement(Status, { message: this.state.message }),
 	            tiles,
-	            this.state.playagain ? React.createElement(Playagain, { handler: this.handler }) : null
+	            this.state.playagain ? React.createElement(Playagain, { message: this.state.message, handler: this.handler }) : null,
+	            React.createElement(Prizes, null)
 	        );
 	    },
 
@@ -21943,6 +21943,11 @@
 	                                "div",
 	                                { className: "playAgain" },
 	                                React.createElement(
+	                                        "h2",
+	                                        { className: "" },
+	                                        this.props.message
+	                                ),
+	                                React.createElement(
 	                                        "button",
 	                                        { className: "playButton", onClick: this.props.handler },
 	                                        " Play again"
@@ -21954,6 +21959,45 @@
 	});
 
 	module.exports = Playagain;
+
+/***/ }),
+/* 178 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+	var Prize = React.createClass({
+	        displayName: "Prize",
+
+	        render: function render() {
+	                return React.createElement(
+	                        "div",
+	                        null,
+	                        React.createElement(
+	                                "div",
+	                                { className: "prizes" },
+	                                React.createElement(
+	                                        "div",
+	                                        { className: "icons" },
+	                                        " 10 Movie Tickets"
+	                                ),
+	                                React.createElement(
+	                                        "div",
+	                                        { className: "icons" },
+	                                        " 3 iPhones"
+	                                ),
+	                                React.createElement(
+	                                        "div",
+	                                        { className: "icons" },
+	                                        " 1 Royal Enfield"
+	                                )
+	                        )
+	                );
+	        }
+	});
+
+	module.exports = Prize;
 
 /***/ })
 /******/ ]);

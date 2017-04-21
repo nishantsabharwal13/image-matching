@@ -137,3 +137,43 @@ text-align: center;
     font-weight: bold;
     color: #333;
 }
+.icons {
+    float: left;
+    width: 32%;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+
+.prizes {
+    padding: 2rem 0;
+    display: table;
+    width: 100%;
+    background: #FFF3FA;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: -6px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.52);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.icons:nth-child(1):before {
+    background: url(../images/mobile.png);
+    background-size: contain;
+    content: 'sd';
+    color: transparent;
+    zoom: 1.4;
+}
+.icons:nth-child(2):before {
+    background: url(../images/movietickets.png);
+    background-size: contain;
+    content: 'sd';
+    color: transparent;
+    zoom: 1.4;
+}
+.icons:nth-child(3):before {
+    background: url(../images/bike.png);
+    background-size: contain;
+    content: 'sd';
+    color: transparent;
+    zoom: 1.4;
+}

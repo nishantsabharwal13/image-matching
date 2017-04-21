@@ -5,6 +5,7 @@ var Tile = require('./Tile.jsx');
 var Status = require('./Status.jsx');
 var TileActions = require('../actions/TileActions');
 var Playagain = require('./Playagain.jsx');
+var Prizes = require('./Prizes.jsx');
 
 /**
  * Retrieve the current TODO data from the TodoStore
@@ -76,7 +77,8 @@ var Playagain = require('./Playagain.jsx');
             </p>
             <Status message={this.state.message} />
             {tiles}
-              { this.state.playagain ? <Playagain message = {this.state.message} handler = {this.handler} /> : null }
+            { this.state.playagain ? <Playagain message = {this.state.message} handler = {this.handler} /> : null }
+            <Prizes />
             </section>
             );
     },
@@ -87,7 +89,6 @@ var Playagain = require('./Playagain.jsx');
      _onTileChange: function () {
         this.setState({
             allTiles: TileStore.getAll(),
-            playagain:true,
         });
     },
 
