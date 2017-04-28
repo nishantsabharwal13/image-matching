@@ -1,4 +1,4 @@
-# Movie Name 'memory' Game - using ReactJS and Webpack
+# Image 'memory Game' - using ReactJS(flux implementation) and Webpack
 
 This is a memory game of movie image matching developed on ReactJS with webpack as the module bundler.
 
